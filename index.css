@@ -1,0 +1,146 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #c5c1a7;
+    font-size: 0.8rem;
+}
+
+h1 {
+    border-bottom: 0.07em solid #D9D9D9;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content {
+    width: 50%;
+    padding: 2%;
+    margin: auto;
+}
+
+.accor {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+.accorItem {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-bottom: 0.06em solid #D9D9D9;
+}
+
+.accorItem > input {
+    display: none;
+}
+
+.itemName-X {
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemName-X > h2 {
+    opacity: .6;
+
+}
+
+.btnWrap {
+    background: url('img/icon.svg') 0 0/100% 100% no-repeat;
+    align-self: center;
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(135deg);
+    opacity: 0;
+    transition: all ease .8s;
+    position: absolute;
+    margin-left: 45%;
+    border-radius: 50%;
+}
+
+
+.imgMeme {
+    display: inline-block;
+    align-self: center;
+    max-width: 100%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 1.2s;
+}
+
+.imgMeme > img {
+    transform: scale(0.8);
+    transition: all 2s;
+    width: 100%;
+}
+
+.accorInput:checked ~ .imgMeme {
+    height: auto;
+    opacity: 1;
+}
+
+.accorInput:checked ~ .imgMeme > img {
+    transform: scale(1);
+}
+
+.accorInput:checked ~ .itemName-X > h2 {
+    opacity: 1;
+}
+
+.accorInput:checked ~ .itemName-X > .btnWrap {
+    transform: rotate(90deg);
+}
+
+
+@media (hover: hover) {
+    .accorItem:hover .btnWrap {
+        transform: rotate(90deg);
+        opacity: 1;
+        cursor: pointer;
+
+    }
+
+    .accorItem {
+        cursor: pointer;
+    }
+
+    .accor:hover .itemName-X > h2 {
+        opacity: 1;
+
+    }
+
+
+    .accorItem:hover .imgMeme > img {
+        transform: scale(1);
+    }
+
+    .accor:hover .btnWrap {
+        opacity: 1;
+    }
+
+
+    .accorItem:hover .imgMeme {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+
+.accorItem:active .itemName-X h2 {
+    color: deepskyblue;
+}
+
+.accorItem:active .itemName-X .btnWrap {
+    background-color: deepskyblue;
+
+}
